@@ -25,6 +25,23 @@ class _Formulario extends State<Formulario> {
           Container(
             height: 20,
           ),
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: "Senha",
+            ),
+            validator: (value) {
+              if (value!.isNotEmpty) {
+                return 'Informe algum texto';
+              }
+              return null;
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (_formkey.currentState!.validate()) ;
+            },
+            child: const Text("Enviar"),
+          )
         ],
       ),
     );
